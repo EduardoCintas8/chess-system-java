@@ -33,19 +33,16 @@ public class UI {
 	public static void clearScreen() {
 		System.out.println("\033[H\033[2J");
 		System.out.flush();
-		
+
 	}
-	
-	
-	
+
 	public static ChessPosition readChessPosition(Scanner sc) {
 		try {
 			String s = sc.nextLine();
 			char column = s.charAt(0);
 			int row = Integer.parseInt(s.substring(1));
 			return new ChessPosition(column, row);
-		} 
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			throw new InputMismatchException("Error reading ChessPostion. Valid values are from a1 to h8.");
 		}
 	}
